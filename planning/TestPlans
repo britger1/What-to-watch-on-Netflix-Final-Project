@@ -1,0 +1,390 @@
+Each movie I that is a potential option for someone to watch will have to be 
+tested three different times once for when the user inputs only numbers, once when 
+they user types out what they want, and once to make sure the loops to reask the
+questions when there is a bad input, so my plan is to run through the chain
+to get to each movie testing each of these three things.
+The expected result wil be apperent in the title of the plan.
+
+if I put the word correct it means I was able to achieve the result I wanted 
+
+2001: A Space Odyssey
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+30 for 30: Winning Time: Reggie Miller vs the New York Knicks
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+Adventures of Sharkboy and Lavagirl, The
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Alvin and the Chipmunks meet Frankenstein
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Arrow
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Batman 1989
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Batman Begins
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Benchwarmers, The
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Brain Games
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Braveheart
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Breaking Bad 
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Bruce Almighty
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Cheers
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+  
+Dinotrux
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Django Unchained
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Feris Buller's Day Off
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Firefly  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Flash, The
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  
+  
+Forrest Gump
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Good Will Hunting
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+Gotham
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Inglorious Basterds
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Kill Bill: Vol 1
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Kill Bill: Vol 2
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Merlin 
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Mulan
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Office (US), The
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Parks and Recreation
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Patriot, The 
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Penquins of Madagascar: The Movie
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Phineas and Ferb
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Prison Break
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Pulp Fiction
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Reef, The
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Reservoir Dogs
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Rocky 
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Rocky IV
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Robin Hood: Prince of Thieves
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Silence of the Lambs
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Sixth Sense, The
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Sonic Underground
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Spy Kids
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Star Trek
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Star Trek: The Next Generation 
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Terminator, The
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Treasure Planet
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+Walking Dead, The
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct
+  
+We Were Soldiers
+  Actual result result with Numbers 
+  correct
+  Actual result Typed
+  correct
+  Actual result loop test
+  correct

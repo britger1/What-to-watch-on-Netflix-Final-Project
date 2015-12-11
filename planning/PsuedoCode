@@ -1,0 +1,581 @@
+Main
+  initialize output to ""
+  initialize suggestion to ""
+ 
+ alert with "This program will help you deside what to watch on Netflix\n
+            When you enter an answer a question you can either enter the the actual answer or
+            the number associated with it. Example:\n\n\t1: Yes\n\t2: No \n\n You could either enter
+            ,Yes' or '1' to go down that chain or 'No' or '2' to go down that chain.\n Capitalization
+            doesn't matter, but spelling does.\n Click OK to begin"
+  
+  DO
+    prompt for wantToWatch with "Do you want to watch something on Netflix?\n\n1: Yes\n2: No"
+    convert wantToWatch to upper case
+    IF wantToWatch !== "1" OR wantToWatch !== "YES" OR wantToWatch !== "2" OR wantToWatch !== "NO" THEN
+      alert with "Invalid input. Please try again."
+    ENDIF
+  WHILE wantToWatch !== "1" OR wantToWatch !== "YES" OR wantToWatch !== "2" OR wantToWatch !== "NO"
+ 
+  IF wantToWatch === "2" OR wantToWatch === "NO" THEN
+    set output to "What are you doing on this program if you don't want to watch something on Netflix."
+  ELSE
+   
+    DO
+      prompt for areThereKids with "Will there be children watching?\n\n1: Yes\n2: No"
+      convert areThereKids to upper case
+      IF areThereKids !== "1" OR areThereKids !== "YES" OR areThereKids !== "2" OR areThereKids !== "NO" THEN
+        alert with "Invalid input. Please try again."
+      ENDIF
+    WHILE areThereKids !== "1" OR areThereKids !== "YES" OR areThereKids !== "2" OR areThereKids !== "NO" 
+    
+    IF areThereKids === "1" OR areThereKids === "YES" THEN
+    
+    DO
+      prompt for watchingWithTheKids with "Do you have to watch with the children?\n\n1: Yes\n2: No"
+      convert watchingWithTheKids to upper case
+      IF watchingWithTheKids !== "1" OR watchingWithTheKids !== "YES" OR watchingWithTheKids !== "2" OR watchingWithTheKids !== "NO" THEN
+        alert with "Invalid input. Please try again."
+      ENDIF
+    WHILE watchingWithTheKids !== "1" OR watchingWithTheKids !== "YES" OR watchingWithTheKids !== "2" OR watchingWithTheKids !== "NO"
+   
+    IF watchingWithTheKids !== "1" OR watchingWithTheKids !== "YES" THEN
+      suggestion = Call PickAShoWToWatchWithTheKids 
+    ELSE
+      suggestion = Call PickAShowForTheKidsToWatchWithoutYou
+    ENDIF
+    
+    ELSE
+     
+      DO
+        prompt for adultTvOrMovie with "Would you like to watch a Television Show or a Movie?\n\n1: TV \n2: Movie"
+        convert adultTvOrMovie to upper case
+        IF adultTvOrMovie !== "1" OR adultTvOrMovie !== "YES" OR adultTvOrMovie !== "2" OR adultTvOrMovie !== "NO" THEN
+          alert with "Invalid input. Please try again."
+        ENDIF
+      WHILE adultTvOrMovie !== "1" OR adultTvOrMovie !== "TV" OR adultTvOrMovie !== "2" OR adultTvOrMovie !== "MOVIE"
+      
+      IF watchingWithTheKids !== "1" OR watchingWithTheKids !== "YES" THEN
+        suggestion = Call PickATelevisionShowForAnOlderAudience
+      ELSE
+        suggestion = Call PickAMovieForAnOlderAudience
+      ENDIF
+      
+    ENDIF
+  output = "You should try watching " + suggestion
+  ENDIF
+  Display outout
+END
+
+Call Main
+
+
+
+
+PickAShoWToWatchWithTheKids
+  DO
+    prompt for doYouWantDisney with "Do you want to watch something by Disney?\n\n1: Yes\n2: No"
+    convert doYouWantDisney to upper case
+    IF doYouWantDisney !== "1" OR doYouWantDisney !== "YES" OR doYouWantDisney !== "2" OR doYouWantDisney !== "NO" THEN
+      alert with "Invalid input. Please try again."
+    ENDIF
+  WHILE doYouWantDisney !== "1" OR doYouWantDisney !== "YES" OR doYouWantDisney !== "2" OR doYouWantDisney !== "NO"
+  
+  IF doYouWantDisney === "1" OR doYouWantDisney === "YES" THEN
+    DO
+      prompt for disneyTvOrMovie with "Would you like to watch a Television Show or a Movie?\n\n1: TV \n2: Movie"
+      convert disneyTvOrMovie to upper case
+      IF disneyTvOrMovie !== "1" OR disneyTvOrMovie !== "YES" OR disneyTvOrMovie !== "2" OR disneyTvOrMovie !== "NO" THEN
+        alert with "Invalid input. Please try again."
+      ENDIF
+    WHILE disneyTvOrMovie !== "1" OR disneyTvOrMovie !== "TV" OR disneyTvOrMovie !== "2" OR disneyTvOrMovie !== "MOVIE"
+    IF disneyTvOrMovie === "1" OR disneyTvOrMovie === "TV" THEN
+      return "Phineas and Ferb"
+    ELSE
+      return "Mulan"
+    ENDIF
+  ELSE
+    DO
+      prompt for planetsOrPenguins with "Would you like to watch a movie spy movie or an adventure movie?\n\n1: Spy \n2: Adventure"
+      convert planetsOrPenguins to upper case
+      IF planetsOrPenguins !== "1" OR planetsOrPenguins !== "SPY" OR planetsOrPenguins !== "2" OR planetsOrPenguins !== "ADVENTURE" THEN
+        alert with "Invalid input. Please try again."
+      ENDIF
+    WHILE planetsOrPenguins !== "1" OR planetsOrPenguins !== "SPY" OR planetsOrPenguins !== "2" OR planetsOrPenguins !== "ADVENTURE"
+    IF planetsOrPenguins === "1" OR planetsOrPenguins === "SPY" THEN
+      return "Penguins of Madagascar: The Movie"
+    ELSE
+      return "Treasure Planet"
+  ENDIF
+
+END
+
+
+
+
+
+
+
+PickAShowForTheKidsToWatchWithoutYou
+  DO
+    prompt for forToddlers with "Are the children watching toddlers?\n\n1: Yes\n2: No"
+    convert forToddlers to upper case
+    IF forToddlers !== "1" OR forToddlers !== "YES" OR forToddlers !== "2" OR forToddlers !== "NO" THEN
+      alert with "Invalid input. Please try again."
+    ENDIF
+  WHILE forToddlers !== "1" OR forToddlers !== "YES" OR forToddlers !== "2" OR forToddlers !== "NO"
+ 
+ IF forToddlers === "1" OR forToddlers === "YES" THEN
+    DO
+      prompt for fishOrDinosaurs with "Would you like your kids to watch a TV show or a Movie?\n\n1: TV \n2: Movie"
+      convert fishOrDinosaurs to upper case
+      IF fishOrDinosaurs !== "1" OR fishOrDinosaurs !== "TV" OR fishOrDinosaurs !== "2" OR fishOrDinosaurs !== "MOVIE" THEN
+        alert with "Invalid input. Please try again."
+      ENDIF
+    WHILE fishOrDinosaurs !== "1" OR fishOrDinosaurs !== "TV" OR fishOrDinosaurs !== "2" OR fishOrDinosaurs !== "MOVIE"
+    IF fishOrDinosaurs === "1" OR fishOrDinosaurs === "TV" THEN
+      return "Dinotrux"
+    ELSE
+      return "The Reef"
+    ENDIF
+  ELSE
+   
+   DO
+      prompt for animatedFeature with "Would you like the children to watch an animated film?\n\n1: Yes\n2: No"
+      convert animatedFeature to upper case
+      IF animatedFeature !== "1" OR animatedFeature !== "YES" OR animatedFeature !== "2" OR animatedFeature !== "NO" THEN
+        alert with "Invalid input. Please try again."
+      ENDIF
+    WHILE animatedFeature !== "1" OR animatedFeature !== "YES" OR animatedFeature !== "2" OR animatedFeature !== "NO"
+    
+    IF animatedFeature === "1" OR animatedFeature === "YES" THEN
+      DO
+        prompt for ChipmunksOrHedgehogs with "Would you like your kids to watch a TV show or a Movie?\n\n1: TV \n2: Movie"
+        convert ChipmunksOrHedgehogs to upper case
+        IF ChipmunksOrHedgehogs !== "1" OR ChipmunksOrHedgehogs !== "TV" OR ChipmunksOrHedgehogs !== "2" OR ChipmunksOrHedgehogs !== "MOVIE" THEN
+          alert with "Invalid input. Please try again."
+        ENDIF
+      WHILE ChipmunksOrHedgehogs !== "1" OR ChipmunksOrHedgehogs !== "TV" OR ChipmunksOrHedgehogs !== "2" OR ChipmunksOrHedgehogs !== "MOVIE"
+        IF ChipmunksOrHedgehogs === "1" OR ChipmunksOrHedgehogs === "TV" THEN
+          return "Sonic Underground"
+        ELSE
+          return "Alvin and the Chipmunks meet Frankenstein"
+        ENDIF
+    ELSE
+      DO
+        prompt for spysOrDreams with "Would you like your kids to watch a spy movie or an adventure movie?\n\n1: SPY \n2: ADVENTURE"
+        convert spysOrDreams to upper case
+        IF spysOrDreams !== "1" OR spysOrDreams !== "SPY" OR spysOrDreams !== "2" OR spysOrDreams !== "ADVENTURE" THEN
+          alert with "Invalid input. Please try again."
+        ENDIF
+      WHILE spysOrDreams !== "1" OR spysOrDreams !== "SPY" OR spysOrDreams !== "2" OR spysOrDreams !== "ADVENTURE"
+        IF spysOrDreams === "1" OR spysOrDreams === "SPY" THEN
+          return "Spy Kids"
+        ELSE
+          return "The AdventuresTof Sharkboy and Lavagirl"
+        ENDIF
+    ENDIF
+  ENDIF
+END
+
+
+
+
+
+
+
+
+
+
+
+PickATelevisionShowForAnOlderAudience
+  DO
+    prompt for TVDrama with "Would you like to watch a TV Drama?\n\n1: Yes\n2: No"
+    convert TVDrama to upper case
+    IF TVDrama !== "1" OR TVDrama !== "YES" OR TVDrama !== "2" OR TVDrama !== "NO" THEN
+      alert with "Invalid input. Please try again."
+    ENDIF
+  WHILE TVDrama !== "1" OR TVDrama !== "YES" OR TVDrama !== "2" OR TVDrama !== "NO"
+  
+  IF TVDrama === "1" OR TVDrama === "YES"
+    DO
+      prompt for superHeroShow with "Would you like to watch a superhero show?\n\n1: Yes\n2: No"
+      convert superHeroShow to upper case
+      IF superHeroShow !== "1" OR superHeroShow !== "YES" OR superHeroShow !== "2" OR superHeroShow !== "NO" THEN
+        alert with "Invalid input. Please try again."
+      ENDIF
+    WHILE superHeroShow !== "1" OR superHeroShow !== "YES" OR superHeroShow !== "2" OR superHeroShow !== "NO"
+    IF superHeroShow === "1" OR superHeroShow === "YES" THEN
+      DO
+        prompt for policeOrPowers with "Would you like the show to focus on the police or actual superheroes?\n\n1: Police\n2: Superheroes"
+        convert policeOrPowers to upper case
+        IF policeOrPowers !== "1" OR policeOrPowers !== "POLICE" OR policeOrPowers !== "2" OR policeOrPowers !== "SUPERHEROES" THEN
+          alert with "Invalid input. Please try again."
+        ENDIF
+      WHILE policeOrPowers !== "1" OR policeOrPowers !== "POLICE" OR policeOrPowers !== "2" OR policeOrPowers !== "SUPERHEROES"
+      IF policeOrPowers !== "1" OR policeOrPowers !== "POLICE" THEN
+        return "Gotham"
+      ELSE
+        DO
+          prompt for arrowOrFlash with "Would you like the hero to be a vigilante:\n\n1: Yes\n2: No"
+          convert arrowOrFlash to upper case
+          IF arrowOrFlash !== "1" OR arrowOrFlash !== "YES" OR arrowOrFlash !== "2" OR arrowOrFlash !== "NO" THEN
+            alert with "Invalid input. Please try again."
+          ENDIF
+        WHILE arrowOrFlash !== "1" OR arrowOrFlash !== "YES" OR arrowOrFlash !== "2" OR arrowOrFlash !== "NO"
+      ENDIF
+      IF arrowOrFlash !== "1" OR arrowOrFlash !== "YES" THEN
+        return "Arrow"
+      ELSE
+        return "The Flash"
+      ENDIF
+    ELSE
+      DO
+        prompt for grittyShow with "Would you like to watch a gritty TV show?\n\n1: Yes\n2: No"
+        convert grittyShow to upper case
+        IF grittyShow !== "1" OR grittyShow !== "YES" OR grittyShow !== "2" OR grittyShow !== "NO" THEN
+          alert with "Invalid input. Please try again."
+        ENDIF
+      WHILE grittyShow !== "1" OR grittyShow !== "YES" OR grittyShow !== "2" OR grittyShow !== "NO"
+      IF grittyShow === "1" OR grittyShow === "YES" THEN
+        DO
+          prompt for crimeShow with "Would you like to watch a crime TV show?\n\n1: Yes\n2: No"
+          convert crimeShow to upper case
+          IF crimeShow !== "1" OR crimeShow !== "YES" OR crimeShow !== "2" OR crimeShow !== "NO" THEN
+            alert with "Invalid input. Please try again."
+        WHILE crimeShow !== "1" OR crimeShow !== "YES" OR crimeShow !== "2" OR crimeShow !== "NO"
+        IF crimeShow === "1" OR crimeShow === "YES" THEN
+           DO
+              prompt for methOrMystery with "Would you like to watch a conspiracy TV show?\n\n1: Yes\n2: No"
+              convert methOrMystery to upper case
+              IF methOrMystery !== "1" OR methOrMystery !== "YES" OR methOrMystery !== "2" OR methOrMystery !== "NO" THEN
+                alert with "Invalid input. Please try again."
+            WHILE methOrMystery !== "1" OR methOrMystery !== "YES" OR methOrMystery !== "2" OR methOrMystery !== "NO"
+            IF methOrMystery === "1" OR methOrMystery === "YES" THEN
+              return "Prison Break"
+            ELSE
+              return "Breaking Bad"
+            ENDIF
+        ELSE
+          return "The Walking Dead"
+        ENDIF
+      ELSE
+        DO
+          prompt for sciFiOrFantasy with "Would you like to watch science fiction or fantasy?\n\n1: SciFi\n2: Fantasy"
+          convert sciFiOrFantasy to upper case
+          IF sciFiOrFantasy !== "1" OR sciFiOrFantasy !== "SCIFI" OR sciFiOrFantasy !== "2" OR sciFiOrFantasy !== "FANTASY" THEN
+            alert with "Invalid input. Please try again."
+        WHILE sciFiOrFantasy !== "1" OR sciFiOrFantasy !== "SCIFI" OR sciFiOrFantasy !== "2" OR sciFiOrFantasy !== "FANTASY"
+        IF sciFiOrFantasy === "1" OR sciFiOrFantasy === "SCIFI" THEN
+          return "Firefly"
+        ELSE
+          return "Merlin"
+        ENDIF
+      ENDIF
+    ENDIF
+  ELSE
+    DO
+      prompt for sitcom with "Would you like to watch a sitcom?\n\n1: Yes\n2: No"
+      convert sitcom to upper case
+      IF sitcom !== "1" OR sitcom !== "YES" OR sitcom !== "2" OR sitcom !== "NO" THEN
+        alert with "Invalid input. Please try again."
+    WHILE sitcom !== "1" OR sitcom !== "YES" OR sitcom !== "2" OR sitcom !== "NO"
+    IF sitcom === "1" OR sitcom === "YES" THEN
+      DO
+        prompt for tvEra with "Would you like to watch a show from the 1980's or the 2000's?\n\n1: 1980\n2: 200"
+        convert tvEra to upper case
+        IF tvEra !== "1" OR tvEra !== "1980" OR tvEra !== "2" OR tvEra !== "2000" THEN
+          alert with "Invalid input. Please try again."
+      WHILE tvEra !== "1" OR tvEra !== "1980" OR tvEra !== "2" OR tvEra !== "2000"
+      IF tvEra === "1" OR tvEra === "1980" THEN
+        return "Cheers"
+      ELSE
+        DO
+          prompt for officeORPandR with "Would you like to watch a show that takes place in the government?\n\n1: Yes\n2: No"
+          convert officeORPandR to upper case
+          IF officeORPandR !== "1" OR officeORPandR !== "YES" OR officeORPandR !== "2" OR officeORPandR !== "NO" THEN
+            alert with "Invalid input. Please try again."
+        WHILE officeORPandR !== "1" OR officeORPandR !== "YES" OR officeORPandR !== "2" OR officeORPandR !== "NO"
+        IF officeORPandR === "1" OR officeORPandR === "YES" THEN
+          return "Parks and Recreation"
+        ELSE
+          return "The Office"
+        ENDIF
+      ENDIF
+    ELSE
+      DO
+        prompt for informationTV with "Would you like to watch a show that teaches you interesting things?\n\n1: Yes\n2: No"
+        convert informationTV to upper case
+        IF informationTV !== "1" OR informationTV !== "YES" OR informationTV !== "2" OR informationTV !== "NO" THEN
+          alert with "Invalid input. Please try again."
+      WHILE informationTV !== "1" OR informationTV !== "YES" OR informationTV !== "2" OR informationTV !== "NO"
+      IF informationTV === "1" OR informationTV === "YES" THEN
+        return "Brain Games"
+      ELSE
+        DO
+          prompt for shatnerOrStewart with "Would you rather watch a show starring William Shatner or Patrick Stewart?\n\n1: Shatner\n2: Stewart"
+          convert shatnerOrStewart to upper case
+          IF shatnerOrStewart !== "1" OR shatnerOrStewart !== "SHATNER" OR shatnerOrStewart !== "2" OR shatnerOrStewart !== "STEWART" THEN
+            alert with "Invalid input. Please try again."
+        WHILE shatnerOrStewart !== "1" OR shatnerOrStewart !== "SHATNER" OR shatnerOrStewart !== "2" OR shatnerOrStewart !== "STEWART"
+        IF shatnerOrStewart === "1" OR shatnerOrStewart === "SHATNER" THEN
+          return "Star Trek: The Original Series"
+        ELSE
+          return "Star Trek: The Next Generation"
+        ENDIF
+      ENDIF
+    ENDIF
+  ENDIF
+END
+
+
+
+
+PickAMovieForAnOlderAudience
+  DO
+    prompt for tarentinoFilms with "Would you like to watch a film by Quentin Tarentino?\n\n1: Yes\n2: No"
+    convert tarentinoFilms to upper case
+    IF tarentinoFilms !== "1" OR tarentinoFilms !== "YES" OR tarentinoFilms !== "2" OR tarentinoFilms !== "NO" THEN
+      alert with "Invalid input. Please try again."
+  WHILE tarentinoFilms !== "1" OR tarentinoFilms !== "YES" OR tarentinoFilms !== "2" OR tarentinoFilms !== "NO"
+  IF tarentinoFilms === "1" OR tarentinoFilms === "YES" THEN
+     DO
+      prompt for historyFilm with "Would you like to watch a film set in 'history'?\n\n1: Yes\n2: NO"
+      convert historyFilm to upper case
+      IF historyFilm !== "1" OR historyFilm !== "YES" OR historyFilm !== "2" OR historyFilm !== "NO" THEN
+        alert with "Invalid input. Please try again."
+    WHILE historyFilm !== "1" OR historyFilm !== "YES" OR historyFilm !== "2" OR historyFilm !== "NO"
+    IF historyFilm === "1" OR historyFilm === "YES" THEN
+      DO
+        prompt for wwiiOrWestern with "Would you like to watch a World War 2 film or a western?\n\n1: WWII\n2: Western"
+        convert wwiiOrWestern to upper case
+        IF wwiiOrWestern !== "1" OR wwiiOrWestern !== "WWII" OR wwiiOrWestern !== "2" OR wwiiOrWestern !== "WESTERN" THEN
+          alert with "Invalid input. Please try again."
+      WHILE wwiiOrWestern !== "1" OR wwiiOrWestern !== "WWII" OR wwiiOrWestern !== "2" OR wwiiOrWestern !== "WESTERN"
+      IF wwiiOrWestern === "1" OR wwiiOrWestern === "WWII" THEN
+        return "Inglorious Basterds"
+      ELSE
+        return "Django Unchained"
+      ENDIF
+    ELSE
+       DO
+          prompt for gunOrSwords with "Would you like the primary weapons to be guns or swords?\n\n1: Guns\n2: Swords"
+          convert gunOrSwords to upper case
+          IF gunOrSwords !== "1" OR gunOrSwords !== "GUNS" OR gunOrSwords !== "2" OR gunOrSwords !== "SWORDS" THEN
+            alert with "Invalid input. Please try again."
+        WHILE gunOrSwords !== "1" OR gunOrSwords !== "GUNS" OR gunOrSwords !== "2" OR gunOrSwords !== "SWORDS"
+        IF gunOrSwords === "1" OR gunOrSwords === "GUNS" THEN
+          DO
+            prompt for jacksonOrBuscemi with "Would you rather watch a show starring Samuel L. Jackson or Steve Buscemi?\n\n1: Sam\n2: Steve"
+            convert jacksonOrBuscemi to upper case
+            IF jacksonOrBuscemi !== "1" OR jacksonOrBuscemi !== "SAM" OR jacksonOrBuscemi !== "2" OR jacksonOrBuscemi !== "STEVE" THEN
+              alert with "Invalid input. Please try again."
+          WHILE jacksonOrBuscemi !== "1" OR jacksonOrBuscemi !== "SAM" OR jacksonOrBuscemi !== "2" OR jacksonOrBuscemi !== "STEVE"
+          IF jacksonOrBuscemi === "1" OR jacksonOrBuscemi === "SAM" THEN
+            return "Pulp Fiction"
+          ELSE
+            return "Resevoir Dogs"
+          ENDIF
+        ELSE
+          DO
+            prompt for killBillVol1 with "Have You Seen Kill Bill: Vol. 1?\n\n1: Yes\n2: No"
+            convert killBillVol1 to upper case
+            IF killBillVol1 !== "1" OR killBillVol1 !== "Yes" OR killBillVol1 !== "2" OR killBillVol1 !== "NO" THEN
+              alert with "Invalid input. Please try again."
+          WHILE killBillVol1 !== "1" OR killBillVol1 !== "YES" OR killBillVol1 !== "2" OR killBillVol1 !== "NO"
+          IF killBillVol1 === "1" OR killBillVol1 === "YES" THEN
+            return "Kill Bill: Vol 2"
+          ELSE
+            return "Kill Bill: Vol 1"
+          ENDIF
+        ENDIF
+    ENDIF
+  ELSE
+     DO
+      prompt for sports with "Do you want to watch something about sports?\n\n1: Yes\n2: No"
+      convert sports to upper case
+      IF sports !== "1" OR sports !== "Yes" OR sports !== "2" OR sports !== "NO" THEN
+        alert with "Invalid input. Please try again."
+    WHILE sports !== "1" OR sports !== "YES" OR sports !== "2" OR sports !== "NO"
+    IF sports === "1" OR sports === "YES" THEN
+      DO
+        prompt for sportsDocumentary with "Do you want to watch a sports documentary?\n\n1: Yes\n2: No"
+        convert sportsDocumentary to upper case
+        IF sportsDocumentary !== "1" OR sportsDocumentary !== "Yes" OR sportsDocumentary !== "2" OR sportsDocumentary !== "NO" THEN
+          alert with "Invalid input. Please try again."
+      WHILE sportsDocumentary !== "1" OR sportsDocumentary !== "YES" OR sportsDocumentary !== "2" OR sportsDocumentary !== "NO"
+      IF sportsDocumentary === "1" OR sportsDocumentary === "YES" THEN
+        return "30 for 30: Winning time: Reggie Miller VS the New York Knicks"
+      ELSE
+        DO
+          prompt for weathersOrLundgren with "Would you rather watch a movie with Carl Weathers or Dolph Lundgren?\n\n1: Carl\n2: Dolph"
+          convert jacksonOrBuscemi to upper case
+          IF jacksonOrBuscemi !== "1" OR jacksonOrBuscemi !== "CARL" OR jacksonOrBuscemi !== "2" OR jacksonOrBuscemi !== "DOLPH" THEN
+            alert with "Invalid input. Please try again."
+        WHILE jacksonOrBuscemi !== "1" OR jacksonOrBuscemi !== "CARL" OR jacksonOrBuscemi !== "2" OR jacksonOrBuscemi !== "DOLPH"
+        IF jacksonOrBuscemi === "1" OR jacksonOrBuscemi === "CARL" THEN
+          return "Rocky"
+        ELSE
+          return "Rocky VI"
+        ENDIF
+      ENDIF
+    ELSE
+       DO
+        prompt for melGibson with "Would you like to watch a movie starring Mel Gibson?\n\n1: Yes\n2: No"
+        convert melGibson to upper case
+        IF melGibson !== "1" OR melGibson !== "Yes" OR melGibson !== "2" OR melGibson !== "NO" THEN
+          alert with "Invalid input. Please try again."
+      WHILE melGibson !== "1" OR melGibson !== "YES" OR melGibson !== "2" OR melGibson !== "NO"
+      IF melGibson === "1" OR melGibson === "YES" THEN
+        DO
+          prompt for americanMel with "Would you like the main characters to be American?\n\n1: Yes\n2: No"
+          convert americanMel to upper case
+          IF americanMel !== "1" OR americanMel !== "Yes" OR americanMel !== "2" OR americanMel !== "NO" THEN
+            alert with "Invalid input. Please try again."
+        WHILE americanMel !== "1" OR americanMel !== "YES" OR americanMel !== "2" OR americanMel !== "NO"
+        IF americanMel === "1" OR americanMel === "YES" THEN
+          DO
+            prompt for whichWar with "Which war would you rather watch?\n\n1: Vietnam\n2: Revolutionary"
+            convert whichWar to upper case
+            IF whichWar !== "1" OR whichWar !== "VIETNAM" OR whichWar !== "2" OR whichWar !== "REVOLUTIONARY" THEN
+              alert with "Invalid input. Please try again."
+          WHILE whichWar !== "1" OR whichWar !== "VIETNAM" OR whichWar !== "2" OR whichWar !== "REVOLUTIONARY"
+          IF whichWar === "1" OR whichWar === "VIETNAM" THEN
+            return "We Were Soldiers"
+          ELSE 
+            return "The Patriot"
+          ENDIF
+        ELSE
+          return "Braveheart"
+        ENDIF
+      ELSE
+        DO
+          prompt for comedy with "Would you like to watch a comedy?\n\n1: Yes\n2: No"
+            convert comedy to upper case
+            IF comedy !== "1" OR comedy !== "Yes" OR comedy !== "2" OR comedy !== "NO" THEN
+              alert with "Invalid input. Please try again."
+          WHILE comedy !== "1" OR comedy !== "YES" OR comedy !== "2" OR comedy !== "NO"
+          IF comedy === "1" OR comedy === "YES" THEN
+            DO
+              prompt for jimCarry with "Would you like to watch a movie starring Jim Carry?\n\n1: Yes\n2: No"
+              convert jimCarry to upper case
+              IF jimCarry !== "1" OR jimCarry !== "Yes" OR jimCarry !== "2" OR jimCarry !== "NO" THEN
+                alert with "Invalid input. Please try again."
+            WHILE jimCarry !== "1" OR jimCarry !== "YES" OR jimCarry !== "2" OR jimCarry !== "NO"
+            IF jimCarry === "1" OR jimCarry === "YES" THEN
+              return "Bruce Almighty"
+            ELSE
+              return "The Benchwarmers"
+            ENDIF
+          ELSE
+            DO
+              prompt for batman with "Would you like to watch a movie with Batman?\n\n1: Yes\n2: No"
+              convert batman to upper case
+              IF batman !== "1" OR batman !== "Yes" OR batman !== "2" OR batman !== "NO" THEN
+                alert with "Invalid input. Please try again."
+            WHILE batman !== "1" OR batman !== "YES" OR batman !== "2" OR batman !== "NO"
+            IF batman === "1" OR batman === "YES" THEN
+              DO
+                prompt for nolanOrBurton with "Would you like to watch a film by Christopher Nolan or Tim Burton?\n\n1: Chris\n2: Tim"
+                convert nolanOrBurton to upper case
+                IF nolanOrBurton !== "1" OR nolanOrBurton !== "CHRIS" OR nolanOrBurton !== "2" OR nolanOrBurton !== "TIM" THEN
+                  alert with "Invalid input. Please try again."
+              WHILE nolanOrBurton !== "1" OR nolanOrBurton !== "CHRIS" OR nolanOrBurton !== "2" OR nolanOrBurton !== "TIM"
+              IF nolanOrBurton === "1" OR nolanOrBurton === "CHRIS" THEN
+                return "Batman Begins"
+              ELSE
+                return "Batman (1989)"
+            ELSE
+              DO
+                prompt for feelGood with "Would you like to watch a feel good movie?\n\n1: Yes\n2: No"
+                convert feelGood to upper case
+                IF feelGood !== "1" OR feelGood !== "Yes" OR feelGood !== "2" OR feelGood !== "NO" THEN
+                  alert with "Invalid input. Please try again."
+              WHILE feelGood !== "1" OR feelGood !== "YES" OR feelGood !== "2" OR feelGood !== "NO"
+              IF feelGood === "1" OR feelGood === "YES" THEN
+                DO
+                  prompt for ratedR with "Would you like the movie to be Rated 'R'?\n\n1: Yes\n2: No"
+                  convert ratedR to upper case
+                  IF ratedR !== "1" OR ratedR !== "Yes" OR ratedR !== "2" OR ratedR !== "NO" THEN
+                    alert with "Invalid input. Please try again."
+                WHILE ratedR !== "1" OR ratedR !== "YES" OR ratedR !== "2" OR ratedR !== "NO"
+                IF ratedR === "1" OR ratedR === "YES" THEN 
+                  return "Good Will Hunting"
+                ELSE
+                  DO
+                    prompt for forrestORFeris with "Would you like the main character to be naive and innocent or a mischief maker?\n\n1: Naive\n2: Mischief"
+                    convert feelGood to upper case
+                    IF feelGood !== "1" OR feelGood !== "NAIVE" OR feelGood !== "2" OR feelGood !== "MISCHIEF" THEN
+                      alert with "Invalid input. Please try again."
+                  WHILE feelGood !== "1" OR feelGood !== "NAIVE" OR feelGood !== "2" OR feelGood !== "MISCHIEF"
+                  IF feelGood === "1" OR feelGood === "NAIVE" THEN
+                    return "Forrest Gump"
+                  ELSE
+                    return "Feris Bueller's Day Off"
+                  ENDIF
+                ENDIF
+              ELSE
+                DO
+                  prompt for theFuture with "Would you like the movie to be about the future?\n\n1: Yes\n2: No"
+                  convert theFuture to upper case
+                  IF theFuture !== "1" OR theFuture !== "Yes" OR theFuture !== "2" OR theFuture !== "NO" THEN
+                    alert with "Invalid input. Please try again."
+                WHILE theFuture !== "1" OR theFuture !== "YES" OR theFuture !== "2" OR theFuture !== "NO"
+                IF theFuture === "1" OR theFuture === "YES" THEN 
+                  DO
+                    prompt for timeOrSpace with "Would you like the movie to be about space travel or time travel?\n\n1: Space\n2: Time"
+                    convert timeOrSpace to upper case
+                    IF timeOrSpace !== "1" OR timeOrSpace !== "SPACE" OR timeOrSpace !== "2" OR timeOrSpace !== "TIME" THEN
+                      alert with "Invalid input. Please try again."
+                  WHILE timeOrSpace !== "1" OR timeOrSpace !== "SPACE" OR timeOrSpace !== "2" OR timeOrSpace !== "TIME"
+                  IF timeOrSpace === "1" OR timeOrSpace === "SPACE" THEN 
+                    return "2001: A Space Odyssey"
+                  ELSE
+                    return "The Terminator"
+                  END
+                ELSE
+                  DO
+                    prompt for robinHood with "How about history?\n\n1: Yes\n2: No"
+                    convert robinHood to upper case
+                    IF robinHood !== "1" OR robinHood !== "Yes" OR robinHood !== "2" OR robinHood !== "NO" THEN
+                      alert with "Invalid input. Please try again."
+                  WHILE robinHood !== "1" OR robinHood !== "YES" OR robinHood !== "2" OR robinHood !== "NO"
+                  IF robinHood === "1" OR robinHood === "YES" THEN 
+                    return "Robin Hood: King of Thieves"
+                  ELSE
+                    DO
+                      prompt for ghostsOrPsycho with "Would you like the movie to be about ghosts or a psychopath?\n\n1: Ghost\n2: Psycho"
+                      convert ghostsOrPsycho to upper case
+                      IF ghostsOrPsycho !== "1" OR ghostsOrPsycho !== "GHOST" OR ghostsOrPsycho !== "2" OR ghostsOrPsycho !== "PSYCHO" THEN
+                        alert with "Invalid input. Please try again."
+                    WHILE ghostsOrPsycho !== "1" OR ghostsOrPsycho !== "GHOST" OR ghostsOrPsycho !== "2" OR ghostsOrPsycho !== "PSYCHO"
+                    IF ghostsOrPsycho !== "1" OR ghostsOrPsycho !== "GHOST" THEN
+                      return "The Sixth Sense"
+                    ELSE
+                      return "Silence of the Lambs"
+                    ENDIF
+                  ENDIF
+                ENDIF
+              ENDIF
+            ENDIF
+          ENDIF
+      ENDIF
+    ENDIF
+  ENDIF
+END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
